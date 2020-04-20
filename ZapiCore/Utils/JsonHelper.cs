@@ -39,7 +39,7 @@ namespace ZapiCore
             }
             return JsonConvert.SerializeObject(obj, setting);
         }
-        
+
         /// <summary>
         /// 字符串转化成对象
         /// </summary>
