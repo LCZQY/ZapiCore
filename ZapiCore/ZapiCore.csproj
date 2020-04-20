@@ -4,9 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Description>添加统一响应体和Json格式化方法
-添加数据库事物处理方法</Description>
+添加数据库事物处理方法
+添加中间件捕获异常</Description>
     <PackageReleaseNotes>添加统一响应体和Json格式化方法
 添加数据库事物处理方法</PackageReleaseNotes>
   </PropertyGroup>
