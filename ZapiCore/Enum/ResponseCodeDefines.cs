@@ -39,6 +39,13 @@ namespace ZapiCore
         /// 服务器内部错误 500
         /// </summary>
         public static readonly string ServiceError = ((int)ResponseCodeEnum.ServiceError).ToString();
+
+        /// <summary>
+        /// 暂无权限错误 401
+        /// </summary>
+        public static readonly string NoPermission = ((int)ResponseCodeEnum.NoPermission).ToString();
+
+    
     }
 
     /// <summary>
@@ -46,6 +53,11 @@ namespace ZapiCore
     /// </summary>
     public enum ResponseCodeEnum
     {
+        /// <summary>
+        /// 暂无权限
+        /// </summary>
+        [Description("暂无权限")]
+        NoPermission = 401,
         /// <summary>
         /// 成功
         /// </summary>
