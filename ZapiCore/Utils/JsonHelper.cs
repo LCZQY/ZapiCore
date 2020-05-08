@@ -55,5 +55,16 @@ namespace ZapiCore
             return JsonConvert.DeserializeObject(json, type, setting);
         }
 
+
+        /// <summary>
+        ///Json转对象
+        /// </summary>
+        /// <typeparam name="TObject"></typeparam>
+        /// <param name="json"></param>
+        /// <returns></returns>
+        public static TObject ToObject<TObject>(string json)
+        {
+            return (TObject)ToObject(json, typeof(TObject));
+        }
     }
 }
