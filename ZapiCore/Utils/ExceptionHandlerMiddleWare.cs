@@ -54,6 +54,7 @@ namespace ZapiCore
                 ZCustomizeException ex = exception as ZCustomizeException;
                 responseMessage.Code = ex.Code.ToString();
                 responseMessage.Message = ex.ErrorMsg;
+             
             }
             else if (exception is DbException)
             {
