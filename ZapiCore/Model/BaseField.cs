@@ -27,11 +27,11 @@ namespace ZapiCore.Model
         /// <summary>
         /// 创建时间
         /// </summary>
-        public DateTime? UpdateTime { get; set; }
+        public DateTime? UpdateTime { get; set; } = DateTime.Now;
 
         /// <summary>
         /// 创建时间
         /// </summary>
-        public DateTime? DeleteTime { get; set; }
+        public DateTime? DeleteTime { get; set; } = DateTime.Now;
     }
 }
