@@ -4,15 +4,17 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
     <Description>添加统一响应体和Json格式化方法
 添加数据库事物处理方法
 添加中间件捕获异常
-规定所有的Layui返回体</Description>
+规定所有的Layui返回体
+封装读写分离共用类</Description>
     <PackageReleaseNotes>添加统一响应体和Json格式化方法
 添加数据库事物处理方法
 添加中间件捕获异常
-规定所有的Layui返回体</PackageReleaseNotes>
+规定所有的Layui返回体
+封装读写分离共用类</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
