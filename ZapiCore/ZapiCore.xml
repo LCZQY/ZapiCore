@@ -1,0 +1,746 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZapiCore</name>
+    </assembly>
+    <members>
+        <member name="T:ZapiCore.Attributes.AuthorizationLocalAttribute">
+            <summary>
+            解释token权限的验证
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Attributes.AuthorizationLocalAttribute.Permission">
+            <summary>
+            权限项名称
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Attributes.AuthorizationLocalAttribute.IsCheck">
+            <summary>
+            是否检查权限
+            </summary>
+        </member>
+        <member name="T:ZapiCore.Attributes.DatabaseChooseAttribute">
+            <summary>
+            是否写【
+            true：  使用writeDB，
+            false ：使用readDB】
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Attributes.DatabaseChooseAttribute.IsWrite">
+            <summary>
+            是否写【
+            true：  使用writeDB，
+            false ：使用readDB】
+            </summary>
+        </member>
+        <member name="T:ZapiCore.EnumExtend">
+            <summary>
+            获取枚举的描述扩展
+            </summary>
+        </member>
+        <member name="M:ZapiCore.EnumExtend.GetDescription(System.Enum)">
+            <summary>
+            获取枚举描述信息
+            </summary>
+            <param name="enumValue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ZapiCore.ResponseCodeDefines">
+            <summary>
+            返回参数说明
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeDefines.SuccessCode">
+            <summary>
+            成功 0
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeDefines.ModelStateInvalid">
+            <summary>
+            对象请求不合法 100
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeDefines.ArgumentNullError">
+            <summary>
+            参数不能为空 101
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeDefines.ObjectAlreadyExists">
+            <summary>
+            对象已存在 102
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeDefines.PartialFailure">
+            <summary>
+            局部已失效 103
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeDefines.NotFound">
+            <summary>
+            未找到对应信息 404
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeDefines.NotAllow">
+            <summary>
+            授权失效 403
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeDefines.ServiceError">
+            <summary>
+            服务器内部错误 500
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeDefines.NoPermission">
+            <summary>
+            暂无权限错误 401
+            </summary>
+        </member>
+        <member name="T:ZapiCore.ResponseCodeEnum">
+            <summary>
+            响应结果返回值枚举
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeEnum.NoPermission">
+            <summary>
+            暂无权限
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeEnum.SuccessCode">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeEnum.ModelStateInvalid">
+            <summary>
+            对象请求不合法
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeEnum.ArgumentNullError">
+            <summary>
+            参数不能为空
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeEnum.ObjectAlreadyExists">
+            <summary>
+            对象已存在
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeEnum.PartialFailure">
+            <summary>
+            局部已失效
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeEnum.NotFound">
+            <summary>
+            未找到对应信息
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeEnum.NotAllow">
+            <summary>
+            授权失效
+            </summary>
+        </member>
+        <member name="F:ZapiCore.ResponseCodeEnum.ServiceError">
+            <summary>
+            服务器内部错误
+            </summary>
+        </member>
+        <member name="M:ZapiCore.Filters.AuthorizationFilter.OnActionExecutionAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <summary>
+            在动作之前执行，给用户实体进行动态的赋值
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ZapiCore.Filters.DatabaseChooseFilter">
+            <summary>
+            根据特性选择数据连接字符串
+            IResourceFilter  在构造函数执行之前执行
+            </summary>
+        </member>
+        <member name="M:ZapiCore.Filters.DatabaseChooseFilter.OnResourceExecuting(Microsoft.AspNetCore.Mvc.Filters.ResourceExecutingContext)">
+            <summary>
+            判断使用读库，还是写库
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:ZapiCore.Filters.ModelValidationFilter">
+            <summary>
+            模型验证过滤器
+            </summary>
+        </member>
+        <member name="T:ZapiCore.Filters.SwaggerIgnoreAttribute">
+            <summary>
+            Swagger中生成文档时忽略指定字段
+            </summary>
+        </member>
+        <member name="T:ZapiCore.Helper.CodeHelper">
+            <summary>
+            生成二维码或者条形码
+            </summary>
+        </member>
+        <member name="M:ZapiCore.Helper.CodeHelper.ReadFromImage(System.String)">
+            <summary>
+            读取二维码或者条形码从图片
+            </summary>
+            <param name="imgFile"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ZapiCore.Interface.Baseinterface`1">
+            <summary>
+            公用约束
+            </summary>
+        </member>
+        <member name="T:ZapiCore.ITransaction`1">
+            <summary>
+            事务处理
+            </summary>
+            <typeparam name="TContext">每个插件或者模块自己的DbContext</typeparam>
+        </member>
+        <member name="M:ZapiCore.ITransaction`1.BeginTransaction">
+            <summary>
+            开始事务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ZapiCore.Layui.LayerTreeJson">
+            <summary>
+            layer 树形数据绑定指定返回体
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Layui.LayerTreeJson.Title">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Layui.LayerTreeJson.Label">
+            <summary>
+            兼容选择树响应数据类型
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Layui.LayerTreeJson.Id">
+            <summary>
+            key
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Layui.LayerTreeJson.Children">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:ZapiCore.Layui.LayerTableJson">
+            <summary>
+            layer 表格数据绑定指定返回体
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Layui.LayerTableJson.Count">
+            <summary>
+            行数
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Layui.LayerTableJson.Code">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Layui.LayerTableJson.Msg">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Layui.LayerTableJson.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:ZapiCore.Layui.LayuiPageCondtion">
+            <summary>
+            Layui 表格分页请求体
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Layui.LayuiPageCondtion.Page">
+            <summary>
+            页数
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Layui.LayuiPageCondtion.Limit">
+            <summary>
+            行数
+            </summary>
+        </member>
+        <member name="T:ZapiCore.Model.BaseField">
+            <summary>
+            模型基类
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.BaseField.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.BaseField.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.BaseField.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.BaseField.UpdateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.BaseField.DeleteTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.BaseField.CreateUser">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.UserInfo.Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.UserInfo.UserName">
+            <summary>
+            用户名(登录帐号)
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.UserInfo.TrueName">
+            <summary>
+            用户真实姓名
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.UserInfo.KeyWord">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.UserInfo.OrganizationId">
+            <summary>
+            所属组织ID
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.UserInfo.FilialeId">
+            <summary>
+            所属公司ID(所属经纪公司ID)
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.UserInfo.BlocId">
+            <summary>
+            所属集团ID
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.UserInfo.PhoneNumber">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.UserInfo.OrganizationName">
+            <summary>
+            所属组织名称
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.UserInfo.FilialeName">
+            <summary>
+            所属公司名称(所属经纪公司名称)
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.UserInfo.BlocName">
+            <summary>
+            所属集团名称
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.UserInfo.Application">
+            <summary>
+            用户类型（1-经纪人，2-开发商, 3-员工端用户 ... ）
+            </summary>
+        </member>
+        <member name="P:ZapiCore.Model.UserInfo.UserCode">
+            <summary>
+            用户Code，同一用户唯一标识
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:ZapiCore.Model.UserInfo.OpenId">
+            <summary>
+            用户开放标识
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:ZapiCore.Model.UserInfo.Token">
+            <summary>
+            用户登录凭证
+            </summary>
+        </member>
+        <member name="T:ZapiCore.BaseController">
+            <summary>
+            基础控制器
+            </summary>
+        </member>
+        <member name="P:ZapiCore.BaseController.User">
+            <summary>
+            登录用户
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:ZapiCore.BaseController.LocalUser">
+            <summary>
+            Gets the System.Security.Claims.ClaimsPrincipal for user associated with the executing action.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:ZapiCore.ZCustomizeException">
+            <summary>
+            自定义异常类
+            </summary>
+        </member>
+        <member name="P:ZapiCore.ZCustomizeException.Code">
+            <summary>
+            错误代码
+            </summary>
+        </member>
+        <member name="P:ZapiCore.ZCustomizeException.ErrorMsg">
+            <summary>
+            错误信息描述
+            </summary>
+        </member>
+        <member name="M:ZapiCore.ZCustomizeException.#ctor(System.Int32)">
+            <summary>
+            指定code异常
+            </summary>
+            <param name="code"></param>
+        </member>
+        <member name="M:ZapiCore.ZCustomizeException.#ctor(ZapiCore.ResponseCodeEnum)">
+            <summary>
+            指定code异常
+            </summary>
+            <param name="code"></param>
+        </member>
+        <member name="M:ZapiCore.ZCustomizeException.#ctor(System.String)">
+            <summary>
+            自定义异常内容
+            </summary> 
+            <param name="message"></param>
+        </member>
+        <member name="M:ZapiCore.ZCustomizeException.#ctor(ZapiCore.ResponseCodeEnum,System.String)">
+            <summary>
+            自定义异常内容
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:ZapiCore.ZCustomizeException.#ctor(System.Int32,System.String)">
+            <summary>
+            自定义异常内容
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:ZapiCore.ZCustomizeException.#ctor(System.Int32,System.String,System.Exception)">
+            <summary>
+            自定义异常内容
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="T:ZapiCore.ModelStateInvalidException">
+            <summary>
+            对象验证失败异常
+            </summary>
+        </member>
+        <member name="M:ZapiCore.ModelStateInvalidException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ZapiCore.ModelStateInvalidException.#ctor(System.String)">
+            <summary>
+            指定异常信息描述
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:ZapiCore.ArgumentNullErrorException">
+            <summary>
+            参数为空异常
+            </summary>
+        </member>
+        <member name="M:ZapiCore.ArgumentNullErrorException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ZapiCore.ArgumentNullErrorException.#ctor(System.String)">
+            <summary>
+            指定异常信息描述
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:ZapiCore.ObjectAlreadyExistsException">
+            <summary>
+            对象已存在
+            </summary>
+        </member>
+        <member name="M:ZapiCore.ObjectAlreadyExistsException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ZapiCore.ObjectAlreadyExistsException.#ctor(System.String)">
+            <summary>
+            指定异常信息描述
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:ZapiCore.PartialFailureException">
+            <summary>
+            局部已失效
+            </summary>
+        </member>
+        <member name="M:ZapiCore.PartialFailureException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ZapiCore.PartialFailureException.#ctor(System.String)">
+            <summary>
+            指定异常信息描述
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:ZapiCore.NotFoundException">
+            <summary>
+            未找到对应信息
+            </summary>
+        </member>
+        <member name="M:ZapiCore.NotFoundException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ZapiCore.NotFoundException.#ctor(System.String)">
+            <summary>
+            指定异常信息描述
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:ZapiCore.NotAllowException">
+            <summary>
+            授权失效
+            </summary>
+        </member>
+        <member name="M:ZapiCore.NotAllowException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ZapiCore.NotAllowException.#ctor(System.String)">
+            <summary>
+            指定异常信息描述
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:ZapiCore.ServiceErrorException">
+            <summary>
+            服务器内部错误
+            </summary>
+        </member>
+        <member name="M:ZapiCore.ServiceErrorException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ZapiCore.ServiceErrorException.#ctor(System.String)">
+            <summary>
+            指定异常信息描述
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:ZapiCore.ExceptionHandlerMiddleWare">
+            <summary>
+            中间件捕获异常
+            </summary>
+        </member>
+        <member name="T:ZapiCore.Utils.HttpClientActuator">
+            <summary>
+            HTTP请求
+            </summary>
+        </member>
+        <member name="M:ZapiCore.Utils.HttpClientActuator.#ctor(System.Net.Http.IHttpClientFactory,Microsoft.AspNetCore.Http.IHttpContextAccessor,Microsoft.Extensions.Logging.ILogger{ZapiCore.Utils.HttpClientActuator})">
+            <summary>
+            Http请求实例
+            </summary>
+            <param name="httpClientFactory"></param>
+        </member>
+        <member name="M:ZapiCore.Utils.HttpClientActuator.GetWithToken``1(System.String,System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            GET方法获取
+            </summary>
+            <typeparam name="TResponse"></typeparam>
+            <param name="url"></param>
+            <param name="token"></param>
+            <param name="queryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZapiCore.Utils.HttpClientActuator.CreateUrl(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            创建请求地址
+            </summary>
+            <param name="url"></param>
+            <param name="qs"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ZapiCore.JsonHelper">
+            <summary>
+            Json处理
+            </summary>
+        </member>
+        <member name="M:ZapiCore.JsonHelper.ToJson(System.Object)">
+            <summary>
+            对象转化字符串
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZapiCore.JsonHelper.ToObject(System.String,System.Type)">
+            <summary>
+            字符串转化成对象
+            </summary>
+            <param name="json"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZapiCore.JsonHelper.ToObject``1(System.String)">
+             <summary>
+            Json转对象
+             </summary>
+             <typeparam name="TObject"></typeparam>
+             <param name="json"></param>
+             <returns></returns>
+        </member>
+        <member name="T:ZapiCore.PageCondition">
+            <summary>
+            分页(空则查询全部)
+            </summary>
+        </member>
+        <member name="P:ZapiCore.PageCondition.PageIndex">
+            <summary>
+            页数
+            </summary>
+        </member>
+        <member name="P:ZapiCore.PageCondition.PageSize">
+            <summary>/// 行数
+            </summary>
+        </member>
+        <member name="T:ZapiCore.ResponseMessage">
+            <summary>
+            响应体
+            </summary>
+        </member>
+        <member name="P:ZapiCore.ResponseMessage.Code">
+            <summary>
+            结果码
+            </summary>
+        </member>
+        <member name="P:ZapiCore.ResponseMessage.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="M:ZapiCore.ResponseMessage.#ctor">
+            <summary>
+            构造器
+            </summary>
+        </member>
+        <member name="M:ZapiCore.ResponseMessage.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ZapiCore.ResponseMessage`1">
+            <summary>
+            携带数据的响应体
+            </summary>
+            <typeparam name="TEx"></typeparam>
+        </member>
+        <member name="P:ZapiCore.ResponseMessage`1.Extension">
+            <summary>
+            携带数据
+            </summary>
+        </member>
+        <member name="T:ZapiCore.PagingResponseMessage`1">
+            <summary>
+            分页响应体
+            </summary>
+            <typeparam name="Tentity"></typeparam>
+        </member>
+        <member name="P:ZapiCore.PagingResponseMessage`1.PageIndex">
+            <summary>
+            分页索引
+            </summary>
+        </member>
+        <member name="P:ZapiCore.PagingResponseMessage`1.PageSize">
+            <summary>
+            分页大小
+            </summary>
+        </member>
+        <member name="P:ZapiCore.PagingResponseMessage`1.TotalCount">
+            <summary>
+            对象总数
+            </summary>
+        </member>
+        <member name="P:ZapiCore.PagingResponseMessage`1.PageCount">
+            <summary>
+            分页数量
+            </summary>
+        </member>
+        <member name="T:ZapiCore.Transaction`1">
+            <summary>
+            事务处理
+            </summary>
+            <typeparam name="TContext">每个插件或者模块自己的DbContext</typeparam>
+        </member>
+        <member name="M:ZapiCore.Transaction`1.BeginTransaction">
+            <summary>
+            开始事务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ZapiCore.DatabaseChooseOptions">
+            <summary>
+            配置项
+            </summary>
+        </member>
+        <member name="P:ZapiCore.DatabaseChooseOptions.DefaultChoose">
+            <summary>
+            默认选择哪个连接字符串
+            不设置则使用Read
+            </summary>
+        </member>
+        <member name="T:ZapiCore.DataBaseConnectionFactory">
+            <summary>
+            链接串的切换
+            </summary>
+        </member>
+        <member name="P:ZapiCore.DataBaseConnectionFactory.ConnectionString">
+            <summary>
+            需要使用的连接字符串
+            </summary>
+        </member>
+        <member name="P:ZapiCore.DataBaseConnectionFactory.DatabaseChooseType">
+            <summary>
+            是否使用写的数据库字符串
+            </summary>
+        </member>
+    </members>
+</doc>

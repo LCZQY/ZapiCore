@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using ZapiCore.Model;
 
-namespace ZapiCore.Utils
+namespace ZapiCore
 {
     /// <summary>
     /// 基础控制器

@@ -17,6 +17,11 @@
 封装读写分离共用类</PackageReleaseNotes>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>E:\personalGrowth\ZapiCore\ZapiCore\ZapiCore.xml</DocumentationFile>
+    <OutputPath>C:\Users\86177\.nuget\packages\zapicore\1.0.5\lib\</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="AspNet.Security.OAuth.Validation" Version="2.0.0" />
     <PackageReference Include="IdentityModel" Version="4.3.0" />

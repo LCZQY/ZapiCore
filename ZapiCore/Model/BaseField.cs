@@ -27,11 +27,17 @@ namespace ZapiCore.Model
         /// <summary>
         /// 创建时间
         /// </summary>
-        public DateTime? UpdateTime { get; set; } = DateTime.Now;
+        public DateTime? UpdateTime { get; set; }
 
         /// <summary>
         /// 创建时间
         /// </summary>
-        public DateTime? DeleteTime { get; set; } = DateTime.Now;
+        public DateTime? DeleteTime { get; set; } 
+
+        /// <summary>
+        /// 创建人
+        /// </summary>
+        public string CreateUser { get; set; }
+
     }
 }

@@ -12,7 +12,7 @@ using ZapiCore.Attributes;
 using ZapiCore.Model;
 using ZapiCore.Utils;
 
-namespace Authentication.Common
+namespace ZapiCore.Filters
 {
     public class AuthorizationFilter : IAuthorizationFilter, IAsyncActionFilter
     {
