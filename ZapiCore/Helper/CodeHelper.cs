@@ -51,25 +51,25 @@ namespace ZapiCore.Helper
         /// <returns></returns>
         public static string ReadFromImage(string imgFile)
         {
+            return null;
+            //if (string.IsNullOrWhiteSpace(imgFile))
+            //{
+            //    return "";
+            //}
+            //Image img = Image.FromFile(imgFile);
+            //Bitmap b = new Bitmap(img);
 
-            if (string.IsNullOrWhiteSpace(imgFile))
-            {
-                return "";
-            }
-            Image img = Image.FromFile(imgFile);
-            Bitmap b = new Bitmap(img);
-
-            //该类名称为BarcodeReader,可以读二维码和条形码        
-            var zzb = new BarcodeReader();
-            zzb.Options = new DecodingOptions
-            {
-                CharacterSet = "UTF-8"
-            };
-            Result r = zzb.Decode(BitmapToArray(b));
-            string resultText = r.Text;
-            b.Dispose();
-            img.Dispose();
-            return resultText;
+            ////该类名称为BarcodeReader,可以读二维码和条形码        
+            //var zzb = new BarcodeReader();
+            //zzb.Options = new DecodingOptions
+            //{
+            //    CharacterSet = "UTF-8"
+            //};
+            //Result r = zzb.Decode(BitmapToArray(b));
+            //string resultText = r.Text;
+            //b.Dispose();
+            //img.Dispose();
+            //return resultText;
 
         }
 
